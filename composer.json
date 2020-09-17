@@ -25,11 +25,6 @@
     }
   },
   "scripts": {
-    "pre-package-update": "MoodleComposer\\MoodleComposer::preUpdatePackage",
-    "post-package-update": "MoodleComposer\\MoodleComposer::postPackage",
-    "post-package-install": "MoodleComposer\\MoodleComposer::postPackage",
-    "pre-update-cmd": "MoodleComposer\\MoodleComposer::preUpdate",
-    "post-update-cmd": "MoodleComposer\\MoodleComposer::postUpdate",
     "post-install-cmd": "MoodleComposer\\MoodleComposer::postInstall"
   }
 }

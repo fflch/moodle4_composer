@@ -2,13 +2,15 @@
 
 namespace MoodleComposer;
 
+use Composer\Script\Event;
+use Composer\Util\Filesystem;
+/*
 use Composer\DependencyResolver\Operation\InstallOperation;
 use Composer\DependencyResolver\Operation\UninstallOperation;
 use Composer\DependencyResolver\Operation\UpdateOperation;
 use Composer\Installer\PackageEvent;
 use Composer\Package\PackageInterface;
-use Composer\Script\Event;
-use Composer\Util\Filesystem;
+*/
 
 /**
  * Provides static functions for composer script events.
@@ -17,26 +19,29 @@ use Composer\Util\Filesystem;
  */
 class MoodleComposer
 {
+/*
+    "pre-package-update": "MoodleComposer\\MoodleComposer::preUpdatePackage",
+    "post-package-update": "MoodleComposer\\MoodleComposer::postPackage",
+    "post-package-install": "MoodleComposer\\MoodleComposer::postPackage",
+    "pre-update-cmd": "MoodleComposer\\MoodleComposer::preUpdate",
+    "post-update-cmd": "MoodleComposer\\MoodleComposer::postUpdate",
+*/
 
-    /**
-     * postInstall
-     *
-     * @param \Composer\Script\Event $event
-     */
+
     public static function postInstall(Event $event)
     {
-        $io = $event->getIO();
-        $io->write("------------ postInstall ------------");
-        // TODO resolve need move or copy Moodle
-        self::moveMoodle($event);
-        self::copyConfig($event);
+        #self::moveMoodle($event);
+        $appDir = getcwd();
+        $extra = $event->getComposer()->getPackage()->getExtra();
+        $installerdir = $extra['installerdir'];
+        $filesystem = new Filesystem();
+        #$filesystem->copyThenRemove($appDir . "/vendor/moodle/moodle", $appDir . DIRECTORY_SEPARATOR . $installerdir);
+        $filesystem->copy($appDir . "/vendor/moodle/moodle", $appDir . DIRECTORY_SEPARATOR . $installerdir);
+
+        #self::copyConfig($event);
     }
 
-    /**
-     * preUpdate
-     *
-     * @param \Composer\Script\Event $event
-     */
+/*
     public static function preUpdate(Event $event)
     {
         $io = $event->getIO();
@@ -44,11 +49,6 @@ class MoodleComposer
         self::copyConfigToRoot($event);
     }
 
-    /**
-     * postUpdate
-     *
-     * @param \Composer\Script\Event $event
-     */
     public static function postUpdate(Event $event)
     {
         $io = $event->getIO();
@@ -66,11 +66,6 @@ class MoodleComposer
         }
     }
 
-    /**
-     * preUpdatePackage
-     *
-     * @param \Composer\Script\Event $event
-     */
     public static function preUpdatePackage(PackageEvent $event)
     {
         $io = $event->getIO();
@@ -83,11 +78,7 @@ class MoodleComposer
         }
     }
 
-    /**
-     * postPackage
-     *
-     * @param \Composer\Script\Event $event
-     */
+
     public static function postPackage(PackageEvent $event)
     {
         $io = $event->getIO();
@@ -105,11 +96,7 @@ class MoodleComposer
         }
     }
 
-    /**
-     * getPackage
-     *
-     * @param \Composer\Script\Event $event
-     */
+
     public static function getPackage(PackageEvent $event)
     {
         $operation = $event->getOperation();
@@ -125,11 +112,6 @@ class MoodleComposer
         return $package;
     }
 
-    /**
-     * copyConfigToRoot
-     *
-     * @param \Composer\Script\Event $event
-     */
     public static function copyConfigToRoot(Event $event)
     {
         $io = $event->getIO();
@@ -146,11 +128,6 @@ class MoodleComposer
         }
     }
 
-    /**
-     * moveMoodle
-     *
-     * @param \Composer\Script\Event $event
-     */
     public static function moveMoodle(Event $event)
     {
         $io = $event->getIO();
@@ -163,11 +140,6 @@ class MoodleComposer
         $filesystem->copy($appDir . "/vendor/moodle/moodle", $appDir . DIRECTORY_SEPARATOR . $installerdir);
     }
 
-    /**
-     * removeMoodle
-     *
-     * @param \Composer\Script\Event $event
-     */
     public static function removeMoodle(Event $event)
     {
         $io = $event->getIO();
@@ -179,11 +151,6 @@ class MoodleComposer
         }
     }
 
-    /**
-     * copyConfig
-     *
-     * @param \Composer\Script\Event $event
-     */
     public static function copyConfig(Event $event)
     {
         $io = $event->getIO();
@@ -198,12 +165,6 @@ class MoodleComposer
         }
     }
 
-    /**
-     * setMaintenance
-     *
-     * @param \Composer\Script\Event $event
-     * @param boolean $status
-     */
     public static function setMaintenance(Event $event, $status = false)
     {
         $io = $event->getIO();
@@ -219,12 +180,6 @@ class MoodleComposer
         }
     }
 
-    /**
-     * cleanCache
-     *
-     * @param \Composer\Script\Event $event
-     * @param boolean $status
-     */
     public static function cleanCache(Event $event)
     {
         $io = $event->getIO();
@@ -235,12 +190,6 @@ class MoodleComposer
         exec("php $appDir/$installerdir/admin/cli/purge_caches.php");
     }
 
-    /**
-     * isNewMoodle
-     *
-     * @param \Composer\Script\Event $event
-     * @param boolean $status
-     */
     public static function isNewMoodle(Event $event)
     {
         define("MOODLE_INTERNAL", true);
@@ -286,9 +235,6 @@ class MoodleComposer
         return false;
     }
 
-    /**
-     * deleteRecursive
-     */
     public static function deleteRecursive($path)
     {
         if (is_file($path) || is_link($path)) {
@@ -306,5 +252,5 @@ class MoodleComposer
         $dir->close();
         return rmdir($path) && $success;
     }
-
+*/
 }
