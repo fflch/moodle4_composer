@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "993ba69ba22175f84f61d402949b0a16",
+    "content-hash": "865269869bd146275177c6a425111c1e",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "dev-master",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "c462a693445b8f6913e95c2ea774d60cf42f64ec"
+                "reference": "b93bcf0fa1fccb0b7d176b0967d969691cd74cca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/c462a693445b8f6913e95c2ea774d60cf42f64ec",
-                "reference": "c462a693445b8f6913e95c2ea774d60cf42f64ec",
+                "url": "https://api.github.com/repos/composer/installers/zipball/b93bcf0fa1fccb0b7d176b0967d969691cd74cca",
+                "reference": "b93bcf0fa1fccb0b7d176b0967d969691cd74cca",
                 "shasum": ""
             },
             "require": {
@@ -29,7 +29,7 @@
             },
             "require-dev": {
                 "composer/composer": "1.6.* || 2.0.*@dev",
-                "composer/semver": "^1 || ^3",
+                "composer/semver": "1.0.* || 2.0.*@dev",
                 "phpunit/phpunit": "^4.8.36",
                 "sebastian/comparator": "^1.2.4",
                 "symfony/process": "^2.3"
@@ -137,44 +137,88 @@
                     "type": "custom"
                 },
                 {
-                    "url": "https://github.com/composer",
-                    "type": "github"
-                },
-                {
                     "url": "https://tidelift.com/funding/github/packagist/composer/composer",
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-06-05T09:23:41+00:00"
+            "time": "2020-04-07T06:57:05+00:00"
         },
         {
-            "name": "moodle-plugin-db/mod_questionnaire",
-            "version": "2020062301",
+            "name": "moodle-plugin-db/block_analytics_graphs",
+            "version": "2018072501",
             "dist": {
                 "type": "zip",
-                "url": "https://moodle.org/plugins/download.php/22193/mod_questionnaire_moodle39_2020062301.zip"
+                "url": "https://moodle.org/plugins/download.php/17460/block_analytics_graphs_moodle38_2018072501.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "moodle-block",
+            "extra": {
+                "installer-name": "analytics_graphs"
+            },
+            "homepage": "https://moodle.org/plugins/analytics_graphs"
+        },
+        {
+            "name": "moodle-plugin-db/mod_attendance",
+            "version": "2020082500",
+            "dist": {
+                "type": "zip",
+                "url": "https://moodle.org/plugins/download.php/22326/mod_attendance_moodle39_2020082500.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
             "type": "moodle-mod",
             "extra": {
-                "installer-name": "questionnaire"
+                "installer-name": "attendance"
             },
-            "homepage": "https://moodle.org/plugins/questionnaire"
+            "homepage": "https://moodle.org/plugins/attendance"
         },
         {
             "name": "moodle/moodle",
-            "version": "3.9",
-            "type": "metapackage"
+            "version": "v3.9.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moodle/moodle.git",
+                "reference": "ccd4ef8ddd03d98b84e3231866b8b1e024dab1db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moodle/moodle/zipball/ccd4ef8ddd03d98b84e3231866b8b1e024dab1db",
+                "reference": "ccd4ef8ddd03d98b84e3231866b8b1e024dab1db",
+                "shasum": ""
+            },
+            "require-dev": {
+                "instaclick/php-webdriver": "dev-local as 1.x-dev",
+                "mikey179/vfsstream": "^1.6",
+                "moodlehq/behat-extension": "3.39.3",
+                "phpunit/dbunit": "4.0.*",
+                "phpunit/phpunit": "7.5.*"
+            },
+            "type": "project",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "Moodle - the world's open source learning platform",
+            "homepage": "https://moodle.org",
+            "funding": [
+                {
+                    "type": "custom"
+                },
+                {
+                    "url": "https://moodle.com/donations/",
+                    "type": "custom"
+                }
+            ],
+            "time": "2020-09-11T02:41:59+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "composer/installers": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

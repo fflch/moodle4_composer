@@ -19,23 +19,6 @@ class MoodleComposer
 {
 
     /**
-     * preInstall
-     *
-     * @param \Composer\Script\Event $event
-     */
-    public static function preInstall(Event $event)
-    {
-        $io = $event->getIO();
-        $io->write("------------ preInstall ------------");
-        $extra = $event->getComposer()->getPackage()->getExtra();
-        $installerdir = $extra['installerdir'];
-        // TODO required that folder no exists
-        /*if (is_dir($installerdir) && file_exists($installerdir . "/version.php")) {
-            throw new \Exception("Moodle is already installed in the folder: $installerdir.");
-        }*/
-    }
-
-    /**
      * postInstall
      *
      * @param \Composer\Script\Event $event
@@ -176,7 +159,8 @@ class MoodleComposer
         $installerdir = $extra['installerdir'];
         $filesystem = new Filesystem();
         $io->write("Copying vendor/moodle/moodle to $installerdir/");
-        $filesystem->copyThenRemove($appDir . "/vendor/moodle/moodle", $appDir . DIRECTORY_SEPARATOR . $installerdir);
+        #$filesystem->copyThenRemove($appDir . "/vendor/moodle/moodle", $appDir . DIRECTORY_SEPARATOR . $installerdir);
+        $filesystem->copy($appDir . "/vendor/moodle/moodle", $appDir . DIRECTORY_SEPARATOR . $installerdir);
     }
 
     /**

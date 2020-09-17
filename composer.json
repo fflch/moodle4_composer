@@ -1,28 +1,22 @@
 {
   "name": "usp/moodle",
-  "repositories": {
-    "0": {
-      "type": "composer",
-      "url": "https://satis.middag.com.br"
-    },
-    "1": {
+  "repositories":{
+    "clamp": {
       "type":"composer",
       "url":"https://moodlegist.clamp-it.org"
-    },
-    "moodle": {
-      "type": "git",
-      "url": "https://github.com/moodle/moodle.git"
-    } 
+    }
   },
   "require": {
-    "composer/installers": "dev-master",
-    "moodle/moodle": "3.9.0",
-    "moodle-plugin-db/mod_questionnaire":"2020062301"
+    "moodle/moodle": "3.9.2",
+    "moodle-plugin-db/mod_attendance":"2020082500",
+    "moodle-plugin-db/block_analytics_graphs": "*"
   },
   "extra": {
     "installerdir": "moodle",
     "installer-paths": {
-      "moodle/mod/{$name}": ["type:moodle-mod"]
+      "moodle/mod/{$name}": ["type:moodle-mod"],
+      "moodle/auth/{$name}": ["type:moodle-auth"],
+      "moodle/block/{$name}": ["type:moodle-block"]
     }
   },
   "autoload": {
@@ -36,12 +30,6 @@
     "post-package-install": "MoodleComposer\\MoodleComposer::postPackage",
     "pre-update-cmd": "MoodleComposer\\MoodleComposer::preUpdate",
     "post-update-cmd": "MoodleComposer\\MoodleComposer::postUpdate",
-    "post-install-cmd": "MoodleComposer\\MoodleComposer::postInstall",
-    "pre-install-cmd": "MoodleComposer\\MoodleComposer::preInstall"
-  },
-  "config": {
-    "preferred-install": {
-      "moodle/moodle": "dist"
-    }
+    "post-install-cmd": "MoodleComposer\\MoodleComposer::postInstall"
   }
 }
