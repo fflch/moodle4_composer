@@ -1,0 +1,94 @@
+<?php
+
+    // set to defaults if undefined
+    if (!isset($config->endpoint) || empty($config->endpoint)) {
+        $config->endpoint = '/plugin/stoa/authenticate';
+    }
+
+    if (!isset($config->host)) {
+            $config->host = 'http://localhost';
+    }
+    if (!isset($config->daemonport) || empty($config->daemonport)) {
+        $config->daemonport = '4000';
+    }
+
+    if (!isset($config->daemon)) {
+            $config->daemon = '';
+    }
+    
+    $yesno = array( get_string('no'), get_string('yes') );
+
+?>
+<table cellspacing="0" cellpadding="5" border="0">
+
+<tr valign="top" class="required">
+    <td align="right"><label for="host"><?php print_string("auth_noostoahost_key", "auth_noostoa") ?></label></td>
+    <td>
+        <input id="host" name="host" type="text" size="30" value="<?php echo $config->host?>" />
+        <?php
+
+        if (isset($err["host"])) {
+            formerr($err["host"]);
+        }
+
+        ?>
+    </td>
+    <td><?php print_string("auth_noostoahost", "auth_noostoa") ?></td>
+</tr>
+
+<tr valign="top" class="required">
+    <td align="right"><label for="endpoint"><?php print_string("auth_noostoaendpoint_key", "auth_noostoa") ?></label></td>
+    <td>
+        <input id="endpoint" name="endpoint" type="text" size="30" value="<?php echo $config->endpoint?>" />
+        <?php
+
+        if (isset($err["endpoint"])) {
+            formerr($err["endpoint"]);
+        }
+
+        ?>
+    </td>
+    <td><?php print_string("auth_noostoaendpoint", "auth_noostoa") ?></td>
+</tr>
+
+<tr valign="top" class="required">
+    <td align="right"><label for="daemon"><?php print_string("auth_noostoadaemon_key", "auth_noostoa") ?></label></td>
+    <td>
+        <input id="daemon" name="daemon" type="text" size="30" value="<?php echo $config->daemon?>" />
+        <?php
+
+        if (isset($err["daemon"])) {
+            formerr($err["daemon"]);
+        }
+
+        ?>
+    </td>
+    <td><?php print_string("auth_noostoadaemon", "auth_noostoa") ?></td>
+</tr>
+
+<tr valign="top" class="required">
+    <td align="right"><label for="daemonport"><?php print_string("auth_noostoadaemonport_key", "auth_noostoa") ?></label></td>
+    <td>
+        <input id="daemonport" name="daemonport" type="text" size="30" value="<?php echo $config->daemonport?>" />
+        <?php
+
+        if (isset($err["daemonport"])) {
+            formerr($err["daemonport"]);
+        }
+
+        ?>
+    </td>
+    <td><?php print_string("auth_noostoadaemonport", "auth_noostoa") ?></td>
+</tr>
+
+
+<!--</table>
+
+
+<table cellspacing="0" cellpadding="5" border="0">-->
+<?php
+
+print_auth_lock_options('noostoa', $user_fields, get_string('auth_fieldlocks_help', 'auth'), true, false);
+
+?>
+</table>
