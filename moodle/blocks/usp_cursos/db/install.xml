@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/usp_cursos/db" VERSION="20180102" COMMENT="XMLDB file for Moodle Cursos USP block"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="block_usp_cursos" COMMENT="table to store courses owned by registered teachers">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="codpes" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="codmoodle" TYPE="char" LENGTH="22" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="nomdis" TYPE="char" LENGTH="240" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="objdis" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="tipo" TYPE="char" LENGTH="3" NOTNULL="true" DEFAULT="GR" SEQUENCE="false"/>
+        <FIELD NAME="created" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="checked" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="1" SEQUENCE="false"/>
+        <FIELD NAME="dataini" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Início das aulas, segundo Júpiter/Janus"/>
+        <FIELD NAME="datafim" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Fim do oferecimento desta turma, segundo Júpiter/Janus"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="block_usp_prefixos" COMMENT="store course prefixes and associated institute">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="sglfusclgund" TYPE="char" LENGTH="40" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="nomclgund" TYPE="char" LENGTH="180" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="pfxdisval" TYPE="char" LENGTH="3" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="dscpfxdis" TYPE="char" LENGTH="100" NOTNULL="false" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
