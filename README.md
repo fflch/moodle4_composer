@@ -25,4 +25,10 @@ Plugins locais:
 - moodle/theme/edis: template atual do ediscipla
 - moodle/blocks/usp_cursos
 - moodle/enrol/stoa
-- 
+
+Exemplo de configuração https atrás de um proxy:
+
+    $CFG->wwwroot   = 'https://moodle.fflch.usp.br';
+    $CFG->reverseproxy = true;
+
+
