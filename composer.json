@@ -73,5 +73,10 @@
   "scripts": {
     "post-install-cmd": "MoodleComposer\\MoodleComposer::postInstall",
     "post-update-cmd": "MoodleComposer\\MoodleComposer::postInstall"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
+    }
   }
 }
