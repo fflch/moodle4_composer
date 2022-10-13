@@ -6,10 +6,6 @@ Subindo o ambiente de desenvolvimento:
 Or:
 
     php -S 0.0.0.0:8888 -t moodle -c php.ini
-    
-Outros moodles não-compose:
-
-    php -S 0.0.0.0:8888  -t .
 
 Scrips:
 
