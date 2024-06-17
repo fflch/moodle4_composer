@@ -4,43 +4,41 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2076882fdea8127a71b2af7201ec7316",
+    "content-hash": "f85ad241b994b94fb84da218c8a0be61",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.12.0",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19"
+                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/d20a64ed3c94748397ff5973488761b22f6d3f19",
-                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19",
+                "url": "https://api.github.com/repos/composer/installers/zipball/c29dc4b93137acb82734f672c37e029dfbd95b35",
+                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.0 || ^2.0"
-            },
-            "replace": {
-                "roundcube/plugin-installer": "*",
-                "shama/baton": "*"
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "php": "^7.2 || ^8.0"
             },
             "require-dev": {
                 "composer/composer": "1.6.* || ^2.0",
                 "composer/semver": "^1 || ^3",
                 "phpstan/phpstan": "^0.12.55",
                 "phpstan/phpstan-phpunit": "^0.12.16",
-                "symfony/phpunit-bridge": "^4.2 || ^5",
-                "symfony/process": "^2.3"
+                "symfony/phpunit-bridge": "^5.3",
+                "symfony/process": "^5"
             },
             "type": "composer-plugin",
             "extra": {
                 "class": "Composer\\Installers\\Plugin",
                 "branch-alias": {
-                    "dev-main": "1.x-dev"
-                }
+                    "dev-main": "2.x-dev"
+                },
+                "plugin-modifies-install-path": true
             },
             "autoload": {
                 "psr-4": {
@@ -61,7 +59,6 @@
             "description": "A multi-framework Composer library installer",
             "homepage": "https://composer.github.io/installers/",
             "keywords": [
-                "Craft",
                 "Dolibarr",
                 "Eliasis",
                 "Hurad",
@@ -82,7 +79,6 @@
                 "Whmcs",
                 "WolfCMS",
                 "agl",
-                "aimeos",
                 "annotatecms",
                 "attogram",
                 "bitrix",
@@ -101,7 +97,6 @@
                 "grav",
                 "installer",
                 "itop",
-                "joomla",
                 "known",
                 "kohana",
                 "laravel",
@@ -110,6 +105,7 @@
                 "magento",
                 "majima",
                 "mako",
+                "matomo",
                 "mediawiki",
                 "miaoxing",
                 "modulework",
@@ -129,9 +125,7 @@
                 "silverstripe",
                 "sydes",
                 "sylius",
-                "symfony",
                 "tastyigniter",
-                "typo3",
                 "wordpress",
                 "yawik",
                 "zend",
@@ -139,7 +133,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/installers/issues",
-                "source": "https://github.com/composer/installers/tree/v1.12.0"
+                "source": "https://github.com/composer/installers/tree/v2.2.0"
             },
             "funding": [
                 {
@@ -155,17 +149,17 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-13T08:19:44+00:00"
+            "time": "2022-08-20T06:45:11+00:00"
         },
         {
             "name": "moodle-plugin-db/mod_vpl",
             "version": "2022093012",
             "dist": {
                 "type": "zip",
-                "url": "https://moodle.org/plugins/download.php/27665/mod_vpl_moodle40_2022093012.zip"
+                "url": "https://moodle.org/plugins/download.php/27665/mod_vpl_moodle41_2022093012.zip"
             },
             "require": {
-                "composer/installers": "~1.0"
+                "composer/installers": "^1.0 || ^2.0"
             },
             "type": "moodle-mod",
             "extra": {
@@ -175,16 +169,16 @@
         },
         {
             "name": "moodle/moodle",
-            "version": "v4.0.4",
+            "version": "v4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moodle/moodle.git",
-                "reference": "8febbe39733645a1aeb55f22d2adfb8d66dfc50d"
+                "reference": "ee91c6536f99e1633e2245780c4fe7f47340ed66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moodle/moodle/zipball/8febbe39733645a1aeb55f22d2adfb8d66dfc50d",
-                "reference": "8febbe39733645a1aeb55f22d2adfb8d66dfc50d",
+                "url": "https://api.github.com/repos/moodle/moodle/zipball/ee91c6536f99e1633e2245780c4fe7f47340ed66",
+                "reference": "ee91c6536f99e1633e2245780c4fe7f47340ed66",
                 "shasum": ""
             },
             "require": {
@@ -201,22 +195,26 @@
                 "ext-openssl": "*",
                 "ext-pcre": "*",
                 "ext-simplexml": "*",
+                "ext-sodium": "*",
                 "ext-spl": "*",
                 "ext-xml": "*",
                 "ext-xmlreader": "*",
                 "ext-zip": "*",
                 "ext-zlib": "*",
-                "php": ">=7.3.0"
+                "php": ">=8.1.0"
             },
             "require-dev": {
-                "behat/behat": "3.10.*",
-                "behat/mink": "~1.8",
-                "behat/mink-goutte-driver": "~1.2",
-                "friends-of-behat/mink-extension": "dev-master",
-                "mikey179/vfsstream": "^1.6",
-                "oleg-andreyev/mink-phpwebdriver": "^1.0",
-                "phpunit/phpunit": "9.5.*",
-                "symfony/process": "^4.0 || ^5.0"
+                "behat/behat": "3.14.*",
+                "behat/mink": "^1.11.0",
+                "behat/mink-browserkit-driver": "^2.2.0",
+                "filp/whoops": "^2.15",
+                "friends-of-behat/mink-extension": "^2.7.5",
+                "mikey179/vfsstream": "1.6.*",
+                "oleg-andreyev/mink-phpwebdriver": "1.3.*",
+                "phpunit/phpunit": "^9.6.18",
+                "symfony/http-client": "^4.4 || ^5.0 || ^6.0 || ^7.0",
+                "symfony/mime": "^4.4 || ^5.0 || ^6.0 || ^7.0",
+                "symfony/process": "^4.4 || ^5.0 || ^6.0 || ^7.0"
             },
             "suggest": {
                 "ext-exif": "Enabling Exif PHP extension is recommended, it is used by Moodle to parse image meta data.",
@@ -224,10 +222,8 @@
                 "ext-oci8": "Needed when Moodle uses Oracle database.",
                 "ext-pgsql": "Needed when Moodle uses PostgreSQL database.",
                 "ext-soap": "Enabling SOAP PHP extension is useful for web services and some plugins.",
-                "ext-sodium": "Enabling Sodium PHP extension is recommended, it is used by Moodle encryption API.",
                 "ext-sqlsrv": "Needed when Moodle uses MS SQL Server database.",
-                "ext-tokenizer": "Enabling Tokenizer PHP extension is recommended, it improves Moodle Networking functionality.",
-                "ext-xmlrpc": "Enabling XMLRPC PHP extension is useful for web services and Moodle networking."
+                "ext-tokenizer": "Enabling Tokenizer PHP extension is recommended, it improves Moodle Networking functionality."
             },
             "type": "project",
             "notification-url": "https://packagist.org/downloads/",
@@ -237,7 +233,7 @@
             "description": "Moodle - the world's open source learning platform",
             "homepage": "https://moodle.org",
             "support": {
-                "source": "https://github.com/moodle/moodle/tree/v4.0.4"
+                "source": "https://github.com/moodle/moodle/tree/v4.4.0"
             },
             "funding": [
                 {
@@ -248,7 +244,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-09-10T10:15:57+00:00"
+            "time": "2024-04-20T07:58:15+00:00"
         }
     ],
     "packages-dev": [],
@@ -259,5 +255,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
