@@ -8,8 +8,8 @@
     }
   },
   "require": {
-    "moodle/moodle": "4.4.0",
-    "moodle-plugin-db/mod_vpl": "2022093012"
+    "moodle/moodle": "4.5.0",
+    "moodle-plugin-db/mod_vpl": "2024053112"
   },
   "extra": {
     "installerdir": "moodle",
